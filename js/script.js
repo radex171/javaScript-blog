@@ -3,11 +3,14 @@ document.getElementById('test-button').addEventListener ('click', function(){
     const links = document.querySelectorAll ('.titles a');
     console.log('links:', links);
   });*/
+  
   const titleClickHandler = function(){
-    console.log('Link was clicked!','event:', event ) ;
+    event.preventDefault();
+    const clickedElement = this;
+    
   
   
-  /* remove class 'active' from all article links  */
+  /*[done] remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -15,22 +18,31 @@ for(let activeLink of activeLinks){
   activeLink.classList.remove('active');
 }
 
-  /* add class 'active' to the clicked link */
+  /* [in progress] add class 'active' to the clicked link */
+  
+    clickedElement.classList.add('active');
+    
+  
+  /* [done] remove class 'active' from all articles */
 
-  /* remove class 'active' from all articles */
-
-  const activeArticles = document.querySelectorAll('.articles a.active');
-
+  const activeArticles = document.querySelectorAll('.posts a.active');
+  
   for(let activeArticle of activeArticles){
-    activeArticles.classList.remove('active');
+    activeArticle.classList.remove('active');
   }
 
-  /* get 'href' attribute from the clicked link */
+  /* [done] get 'href' attribute from the clicked link */
 
-  /* find the correct article using the selector (value of 'href' attribute) */
+  const articleSelector = clickedElement.getAttribute('href');
+  
+  /* [done] find the correct article using the selector (value of 'href' attribute) */
 
+  const targetArticle = document.querySelector (articleSelector);
   /* add class 'active' to the correct article */
 
+  targetArticle.classList.add('active');
+  console.log('Link was clicked!','event:', targetArticle ) ;
+  
 }
   const links = document.querySelectorAll('.titles a');
   
