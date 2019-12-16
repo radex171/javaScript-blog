@@ -27,6 +27,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.26.3",
+    "eslint": "^6.7.2",
     "globstar": "^1.0.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.11.0",
