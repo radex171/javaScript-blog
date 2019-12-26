@@ -39,10 +39,10 @@ const optArticleSelector = '.post',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
   optArticleAuthorSelectorLink = '.post-author a',
-  optTagListSelector = '.tags.list',
+  optTagListSelector = '.tags .list',
   optCloudClassCount = '5',
-  optCloudClassPrefix = 'tag-size-';
-  
+  optCloudClassPrefix = 'tag-size-',
+  optAuthorsListSelect = '.sidebar .list-authors';
   
 function generateTitleLinks(customSelector = ''){
   
@@ -83,7 +83,7 @@ function generateTitleLinks(customSelector = ''){
 generateTitleLinks();
 
 function calcParams (tags) {
-  console.log('minMax object created');
+  
 
   const minMax = {
     max : 0,
@@ -96,7 +96,7 @@ function calcParams (tags) {
     if (tags[tag] > minMax.max) {
       minMax.max = tags[tag];
     }
-     if (tags[tag] < minMax.min) {
+    if (tags[tag] < minMax.min) {
       minMax.min = tags[tag];
     }
   }
@@ -106,22 +106,22 @@ function calcParams (tags) {
 
 
 function calculateTagClass(value, minMax) {
-  console.log('class calculated');
+ 
 
   const normalizedValue = value - minMax.min;
-  console.log('normalizedvalue: ', normalizedValue);
+ 
 
   const normalizedMax = minMax.max - minMax.min;
-  console.log('normalizedMax: ', normalizedMax);
+
 
   const percentage = normalizedValue / normalizedMax;
-  console.log('percentage: ', percentage);
+
 
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
-  console.log('classNumber: ', classNumber);
+
 
   const className = optCloudClassPrefix + classNumber;
-  console.log('className: ', className);
+
 
   return className;
 }
@@ -178,8 +178,8 @@ function generateTags(){
   let allTagsHTML = '';
   for (let tag in allTags){
     allTagsHTML += '<li><a href="#tag-' + tag + '" class=" inline ' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag  + '</a></li>';
-    const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams)
-    console.log(tagLinkHTML)
+    const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
+    console.log(tagLinkHTML);
   }
  
   tagList.innerHTML = allTagsHTML;
@@ -230,6 +230,10 @@ function addClickListenersToTags(){
   /* add tagClickHandler as event listener for that link */
     linkToTag.addEventListener('click', tagClickHandler);
   /* END LOOP: for each link */
+  const listsToTags = document.querySelectorAll('.tags a');
+  for(let listToTag of listsToTags){
+    listToTag.addEventListener('click', tagClickHandler);
+  }
   }
 }
 addClickListenersToTags();
