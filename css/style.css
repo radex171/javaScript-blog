@@ -99,12 +99,47 @@ body {
   font-style: italic;
 }
 
-.post-tags {
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+/* tags */
+.tags li {
+  font-weight: 800;
+}
+
+.tags li .tag-size-5 {
+  font-size: 28px;
+  text-decoration: none;
+  color: #003cff;
+}
+
+.tags li .tag-size-4 {
+  font-size: 26px;
+  text-decoration: none;
+  color: #3660ec;
+}
+
+.tags li .tag-size-3 {
+  font-size: 24px;
+  text-decoration: none;
+  color: #5f7bce;
+}
+
+.tags li .tag-size-2 {
+  font-size: 22px;
+  text-decoration: none;
+  color: #768bdf;
+}
+
+.tags li .tag-size-1 {
+  font-size: 20px;
+  text-decoration: none;
+  color: #91ade5;
+}
+
+.sidebar .tags li {
+  display: inline-block;
+  margin: 0 2px;
 }
 /*# sourceMappingURL=style.css.map */
