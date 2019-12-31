@@ -76,12 +76,29 @@ body {
 
 /* Lists */
 
-.list {
+.titles {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  .active {
-    font-weight: bold;
+  padding: 5px 0;
+  li {
+    margin: 10px 0;
+  }
+ 
+  a {
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+    &:hover {
+      padding: 8 25px;
+      font-size: 27px;
+      color: rgb(66, 22, 148);
+      border-radius: 35px;
+      background: rgba(166, 255, 166, 0.719);
+      box-shadow: 7px 7px 12px 1px rgb(8, 61, 8);
+    }
   }
 }
 
@@ -96,9 +113,11 @@ body {
 .authors {
   li {
     margin-bottom: 12px;
+    margin: 20px 0;
   }
 }
 .author-decoration {
+  
   background: rgb(155, 241, 155);
   text-decoration: none;
   font-size: 20px;
@@ -107,8 +126,12 @@ body {
   padding: 6px 10px;
   border: 0 solid blue;
   border-radius: 10px;
+  transition-property: all;
+    transition-duration: 0.5s;
   &:hover {
+    
     background: rgb(105, 199, 105);
+    box-shadow: 7px 7px 12px 1px rgb(8, 61, 8);
   }
 }
 
@@ -132,17 +155,14 @@ body {
 
 /* tags */
 
-
 .tags li{
   font-weight: 800;
-
 
 .tag-size-5 {
   font-size: 28px;
   text-decoration: none;
   color: rgb(0, 60, 255);
 }
-
 
 .tag-size-4 {
   font-size: 26px;
@@ -173,5 +193,4 @@ body {
   display: inline-block;
   margin: 0 2px;
 
-  
 }

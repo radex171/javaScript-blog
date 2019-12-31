@@ -67,14 +67,32 @@ body {
 }
 
 /* Lists */
-.list {
+.titles {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
 }
 
-.list .active {
-  font-weight: bold;
+.titles li {
+  margin: 10px 0;
+}
+
+.titles a {
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.titles a:hover {
+  padding: 8 25px;
+  font-size: 27px;
+  color: #421694;
+  border-radius: 35px;
+  background: rgba(166, 255, 166, 0.719);
+  box-shadow: 7px 7px 12px 1px #083d08;
 }
 
 .list-horizontal li {
@@ -84,6 +102,7 @@ body {
 /* Authors */
 .authors li {
   margin-bottom: 12px;
+  margin: 20px 0;
 }
 
 .author-decoration {
@@ -95,10 +114,13 @@ body {
   padding: 6px 10px;
   border: 0 solid blue;
   border-radius: 10px;
+  transition-property: all;
+  transition-duration: 0.5s;
 }
 
 .author-decoration:hover {
   background: #69c769;
+  box-shadow: 7px 7px 12px 1px #083d08;
 }
 
 /* Post */
